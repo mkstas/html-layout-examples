@@ -1,0 +1,52 @@
+:root {
+  --color-black: #141414;
+  --options-count: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-black);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 8px;
+}
+
+.accordeon {
+  width: 100%;
+  max-width: 960px;
+  height: 360px;
+  display: flex;
+  gap: 8px;
+}
+
+.accordeon__option {
+  flex-grow: 1;
+  flex: 0 0 80px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  transition: flex-grow 1.25s cubic-bezier(0.15, 0.85, 0.45, 1);
+}
+
+.accordeon__option:not(.accordeon__option_active) {
+  cursor: pointer;
+}
+
+.accordeon__option_active {
+  flex-grow: var(--options-count);
+}
